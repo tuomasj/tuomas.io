@@ -1,0 +1,10 @@
+---
+pageable: true
+per_page: 5
+---
+= partial 'partials/hero'
+%h2 Latest blog posts
+%ul.list
+  - page_articles.take(5).each_with_index do |article, i|
+    = partial 'partials/index_post', locals: { article: article }
+= link_to "All blog posts &raquo;", "/archive.html", class: "internal-link"
